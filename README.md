@@ -120,6 +120,10 @@ First of all, we advise you to disable the Drone's serial port console communica
 
 (TODO)
 
+## Use instructions
+
+TODO
+
 ## Future work and development
 If you want to continue what our project or do something of your own based on it, here are some guidelines for a future development:
 - [ ] Upgrade to a better UAV: Our quadcopter is on the edge of what's capable of lifting, so the system is a bit unstable and its life time is quite low (around 4min ~ 4min 15s), so a more powerful drone would be required in order to get a more stable system.
