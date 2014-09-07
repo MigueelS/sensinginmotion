@@ -3,7 +3,7 @@ Sensing In Motion
 
 Environmental awareness is a big topic these days and more and more DIY projects involving environmental sensing are appearing.
 
-"Sensing In Motion" is a project wit the goal of creating an environmental sensing structure/station that reads several parameters, as well as its GPS location, and sends them to a remote server.
+"Sensing In Motion" is a project with the goal of creating an environmental sensing structure/station that reads several parameters, as well as its GPS location, and sends them to a remote server.
 This station can also be plugged on any vehicle (during the course of this project we chose a quadcopter).
 
 ## Hardware involved
@@ -24,7 +24,7 @@ This station can also be plugged on any vehicle (during the course of this proje
 ## How does it work?
 The sensors we're using are connected to Arduino and samples are taken from time to time. Those samples are sent to a remote server (Thingspeak was the chosen one) with HTTP Post using a GPRS communication.
 
-A serial communication is estabilished between the Arduino and the AR Drone 2.0 in order to receive GPS position information to tag each sample taken. The developed protocol is described [here](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/gps%20protocol.png).
+A serial communication is estabilished between the Arduino and the AR Drone 2.0 in order to receive GPS position information to tag each sample taken. The developed protocol is illustrated [here](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/gps%20protocol.png).
 
 ## Instalation
 
@@ -37,7 +37,7 @@ A complete wiring diagram of our system (including the sensors) is available [he
 
 #### Arduino Configuration
 Note: To avoid conflicts between the Arduino GSM Library and Software Serial, you should comment several code lines of both libraries ([check this](http://purposefulscience.blogspot.pt/2013/06/arduino-gsm-shield-tips.html)).
-Make sure you comment the following lines of SoftwareSerial.cpp:
+Make sure you comment the following lines in SoftwareSerial.cpp:
 
 ```c
 /*
@@ -71,27 +71,38 @@ ISR(PCINT1_vect)
 ```
 
 ##### Main configuration
-If you followed the complete system schematic, there is any type of pin configuration. If you want to change the pins used, there are several #define directives you can change/comment on project.ino:
+If you want to change the pins used, there are several ```#define``` directives you can change/comment on project.ino:
 
 ```cpp
-/* Temperature and humidity sensor configuration */
+/* Temperature and humidity sensor pin configuration */
 #define DHT11PIN A1
 
-SoftwareSerial droneSerial(8, 9); // RX, TX
+SoftwareSerial droneSerial(8, 9); // RX pin, TX pin
 
 /* Dust sensor configuration */
-#define DUSTPIN1 11
-#define DUSTPIN2 10
-#define DUSTSAMPLETIME 15000 // in ms
+#define DUSTPIN1 11 // Pin connected to the sensor's P1
+#define DUSTPIN2 10 // Pin connected to the sensor's P2
+#define DUSTSAMPLETIME 15000 // Total sample time (in ms)
 
-#define DRONE // Send data to the drone's serial port
-#define SEND_SERVER // Sent data to the thingspeak server
+#define DRONE // Uncomment to send data to the drone's serial port
+#define SEND_SERVER // Uncomment to send data to the thingspeak server
 ```
 
 There's also the possibility of choosing the enabled sensors, by commenting the desired ```#define``` directive:
 ```cpp
-#define TH_SENSOR_ON
-#define DUST_SENSOR_ON
+#define TH_SENSOR_ON // Uncomment to activate Temp/Hum sensor
+#define DUST_SENSOR_ON // Uncomment to activate Dust sensor
+```
+
+Information regarding your SIM card's mobile carrier should be included in ServerConnection.h:
+```cpp
+#define PINNUMBER "" // Pin number of your SIM Card
+
+// The following directives are related to the GPRS connection
+// Please fill with your mobile carrier's correct data
+#define GPRS_APN "umts"
+#define GPRS_LOGIN ""
+#define GPRS_PASSWORD ""
 ```
 
 #### AR Drone Configuration
