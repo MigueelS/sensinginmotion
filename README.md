@@ -26,6 +26,16 @@ The sensors we're using are connected to Arduino and samples are taken from time
 
 A serial communication is estabilished between the Arduino and the AR Drone 2.0 in order to receive GPS position information to tag each sample taken. The developed protocol is illustrated [here](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/gps%20protocol.png).
 
+The packages containing GPS coordinates have the following syntax:
+> /[latitude],[longitude]!
+
+Command part  | Meaning
+------------- | -------------
+"/"           | command starter
+[latitude]    | latitude value expressed in the decimal degree representation (includes “-” in the beginning if it’s negative and “.” to separate the integer part from the decimal part
+[longitude]   | longitude value expressed in the decimal degree representation (in the same format as the latitude)
+"!" | command finalizer
+
 ## Instalation
 
 #### Wiring
