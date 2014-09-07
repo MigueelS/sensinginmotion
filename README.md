@@ -81,7 +81,7 @@ ISR(PCINT1_vect)
 ```
 
 ##### Main configuration
-If you want to change the pins used or enable/disable features, there are several ```#define``` directives you can change/comment on [project.ino](https://github.com/MigueelS/sensinginmotion/blob/master/arduino/project.ino):
+If you want to change the pins used or enable/disable features, there are several ```#define``` directives you can change/comment in [project.ino](https://github.com/MigueelS/sensinginmotion/blob/master/arduino/project.ino):
 
 ```cpp
 /* Temperature and humidity sensor pin configuration */
@@ -98,13 +98,13 @@ SoftwareSerial droneSerial(8, 9); // RX pin, TX pin
 #define SEND_SERVER // Uncomment to send data to the thingspeak server
 ```
 
-There's also the possibility of choosing the enabled sensors, by commenting the desired ```#define``` directives:
+There's also the possibility of choosing the enabled sensors, by commenting the desired ```#define``` directives in [SensorData.h](https://github.com/MigueelS/sensinginmotion/blob/master/arduino/SensorData.h):
 ```cpp
 #define TH_SENSOR_ON // Uncomment to activate Temp/Hum sensor
 #define DUST_SENSOR_ON // Uncomment to activate Dust sensor
 ```
 
-Information regarding your SIM card's mobile carrier should be included in ServerConnection.h:
+Information regarding your SIM card's mobile carrier should be included in [ServerConnection.h](https://github.com/MigueelS/sensinginmotion/blob/master/arduino/ServerConnection.h):
 ```cpp
 #define PINNUMBER "" // Pin number of your SIM Card
 
