@@ -36,7 +36,55 @@ A Logic Level Shifter will be needed to avoid ruining the Drone's serial pins. W
 A complete wiring diagram of our system (including the sensors) is available [here](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/System%20schematic.png). Since there was a need for multiple GND and 5V pins, we used a PCB and soldered 2 pin sets which are connected to Arduino.
 
 #### Arduino Configuration
-TODO ....
+Note: To avoid conflicts between the Arduino GSM Library and Software Serial, you should comment several code lines of both libraries ([check this](http://purposefulscience.blogspot.pt/2013/06/arduino-gsm-shield-tips.html)).
+Make sure you comment the following lines of SoftwareSerial.cpp:
+
+```c_cpp
+/*
+#if defined(PCINT2_vect)
+ISR(PCINT2_vect)
+{
+  SoftwareSerial::handle_interrupt();
+}
+#endif
+*/
+```
+
+and the following in GSM3SoftSerial.cpp:
+
+```c_cpp
+/*
+#if defined(PCINT0_vect)
+ISR(PCINT0_vect)
+{
+  GSM3SoftSerial::handle_interrupt();
+}
+#endif
+
+#if defined(PCINT1_vect)
+ISR(PCINT1_vect)
+{
+  GSM3SoftSerial::handle_interrupt();
+}
+#endif
+*/
+```
+
+##### Main configuration
+If you followed the complete system schematic, there is any type of pin configuration. If you want to change the pins used, there are several #DEFINE directives you can change on project.ino:
+
+```c_cpp
+/* Temperature and humidity sensor configuration */
+#define DHT11PIN A1
+
+SoftwareSerial droneSerial(8, 9); // RX, TX
+
+/* Dust sensor configuration */
+#define DUSTPIN1 11
+#define DUSTPIN2 10
+#define DUSTSAMPLETIME 15000 // in ms
+```
 
 #### AR Drone Configuration
-We advise you to disable the Drone's serial port console communication, by ... (TODO)
+First of all, we advise you to disable the Drone's serial port console communication, by changing the file "init.sh" (TODO)
+
