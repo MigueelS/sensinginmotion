@@ -85,6 +85,19 @@ SoftwareSerial droneSerial(8, 9); // RX, TX
 #define DUSTSAMPLETIME 15000 // in ms
 ```
 
+On project.ino there is also the possibility of enabling or not the communication Arduino-Drone and the Communication Module activity:
+
+```cpp
+//#define DRONE // Send data to the drone's serial port
+#define SEND_SERVER // Sent data to the thingspeak server
+```
+
+There's also the possibility of choosing the enabled sensors, by commenting the desired ```#define```:
+```cpp
+#define TH_SENSOR_ON
+#define DUST_SENSOR_ON
+```
+
 You can also
 
 #### AR Drone Configuration
