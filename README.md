@@ -81,7 +81,7 @@ ISR(PCINT1_vect)
 ```
 
 ##### Main configuration
-If you want to change the pins used or enable/disable features, there are several ```#define``` directives you can change/comment on project.ino:
+If you want to change the pins used or enable/disable features, there are several ```#define``` directives you can change/comment on [project.ino](https://github.com/MigueelS/sensinginmotion/blob/master/arduino/project.ino):
 
 ```cpp
 /* Temperature and humidity sensor pin configuration */
