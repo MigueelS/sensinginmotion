@@ -1,12 +1,6 @@
 Sensing In Motion
 ===============
 
-```c
-int main() {
-    return 0;
-}
-```
-
 Environmental awareness is a big topic these days and more and more DIY projects involving environmental sensing are appearing.
 
 "Sensing In Motion" is a project wit the goal of creating an environmental sensing structure/station that reads several parameters, as well as its GPS location, and sends them to a remote server.
@@ -30,6 +24,12 @@ This station can also be plugged on any vehicle (during the course of this proje
 ## How does it work?
 The sensors we're using are connected to Arduino and samples are taken from time to time. Those samples are sent to a remote server (Thingspeak was the chosen one) with a HTTP Post using a GPRS communication.
 
+```c
+int main() {
+    return 0;
+}
+```
+
 A serial communication is estabilished between the Arduino and the AR Drone 2.0 in order to receive GPS position information to tag to each sample taken. The developed protocol is described [here](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/gps%20protocol.png).
 
 ## Instalation
@@ -45,7 +45,7 @@ A complete wiring diagram of our system (including the sensors) is available [he
 Note: To avoid conflicts between the Arduino GSM Library and Software Serial, you should comment several code lines of both libraries ([check this](http://purposefulscience.blogspot.pt/2013/06/arduino-gsm-shield-tips.html)).
 Make sure you comment the following lines of SoftwareSerial.cpp:
 
-```cpp
+```c
 /*
 #if defined(PCINT2_vect)
 ISR(PCINT2_vect)
