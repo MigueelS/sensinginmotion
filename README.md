@@ -1,6 +1,12 @@
 Sensing In Motion
 ===============
 
+```c
+int main() {
+    return 0;
+}
+```
+
 Environmental awareness is a big topic these days and more and more DIY projects involving environmental sensing are appearing.
 
 "Sensing In Motion" is a project wit the goal of creating an environmental sensing structure/station that reads several parameters, as well as its GPS location, and sends them to a remote server.
@@ -39,7 +45,7 @@ A complete wiring diagram of our system (including the sensors) is available [he
 Note: To avoid conflicts between the Arduino GSM Library and Software Serial, you should comment several code lines of both libraries ([check this](http://purposefulscience.blogspot.pt/2013/06/arduino-gsm-shield-tips.html)).
 Make sure you comment the following lines of SoftwareSerial.cpp:
 
-```c_cpp
+```cpp
 /*
 #if defined(PCINT2_vect)
 ISR(PCINT2_vect)
@@ -52,7 +58,7 @@ ISR(PCINT2_vect)
 
 and the following in GSM3SoftSerial.cpp:
 
-```c_cpp
+```cpp
 /*
 #if defined(PCINT0_vect)
 ISR(PCINT0_vect)
@@ -71,9 +77,9 @@ ISR(PCINT1_vect)
 ```
 
 ##### Main configuration
-If you followed the complete system schematic, there is any type of pin configuration. If you want to change the pins used, there are several #DEFINE directives you can change on project.ino:
+If you followed the complete system schematic, there is any type of pin configuration. If you want to change the pins used, there are several #define directives you can change on project.ino:
 
-```c_cpp
+```cpp
 /* Temperature and humidity sensor configuration */
 #define DHT11PIN A1
 
@@ -85,6 +91,8 @@ SoftwareSerial droneSerial(8, 9); // RX, TX
 #define DUSTSAMPLETIME 15000 // in ms
 ```
 
+You can also
+
 #### AR Drone Configuration
-First of all, we advise you to disable the Drone's serial port console communication, by changing the file "init.sh" (TODO)
+First of all, we advise you to disable the Drone's serial port console communication, by changing the file "init.sh" (TODO explanation)
 
