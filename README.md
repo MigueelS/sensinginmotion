@@ -22,7 +22,7 @@ This station can also be plugged on any vehicle (during the course of this proje
 - Parrot's Flight Recorder
 
 ## How does it work?
-The sensors we're using are connected to Arduino and samples are taken from time to time. Those samples are sent to a remote server (Thingspeak was the chosen one) with a HTTP Post using a GPRS communication.
+The sensors we're using are connected to Arduino and samples are taken from time to time. Those samples are sent to a remote server (Thingspeak was the chosen one) with HTTP Post using a GPRS communication.
 
 A serial communication is estabilished between the Arduino and the AR Drone 2.0 in order to receive GPS position information to tag to each sample taken. The developed protocol is described [here](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/gps%20protocol.png).
 
@@ -71,7 +71,7 @@ ISR(PCINT1_vect)
 ```
 
 ##### Main configuration
-If you followed the complete system schematic, there is any type of pin configuration. If you want to change the pins used, there are several #define directives you can change on project.ino:
+If you followed the complete system schematic, there is any type of pin configuration. If you want to change the pins used, there are several #define directives you can change/comment on project.ino:
 
 ```cpp
 /* Temperature and humidity sensor configuration */
@@ -83,23 +83,19 @@ SoftwareSerial droneSerial(8, 9); // RX, TX
 #define DUSTPIN1 11
 #define DUSTPIN2 10
 #define DUSTSAMPLETIME 15000 // in ms
-```
 
-On project.ino there is also the possibility of enabling or not the communication Arduino-Drone and the Communication Module activity:
-
-```cpp
-//#define DRONE // Send data to the drone's serial port
+#define DRONE // Send data to the drone's serial port
 #define SEND_SERVER // Sent data to the thingspeak server
 ```
 
-There's also the possibility of choosing the enabled sensors, by commenting the desired ```#define```:
+There's also the possibility of choosing the enabled sensors, by commenting the desired ```#define``` directive:
 ```cpp
 #define TH_SENSOR_ON
 #define DUST_SENSOR_ON
 ```
 
-You can also
-
 #### AR Drone Configuration
 First of all, we advise you to disable the Drone's serial port console communication, by changing the file "init.sh" (TODO explanation)
+
+(TODO)
 
