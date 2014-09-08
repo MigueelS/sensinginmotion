@@ -12,7 +12,7 @@ This station can also be plugged on any vehicle (during the course of this proje
 * **Communication module:** Arduino GSM/GPRS Shield
 
 ##### Sensors used
-* **Humidity/Temperature sensor:** [DHT11] (ftp://imall.iteadstudio.com/Electronic_Brick/IM120710021/DS_IM120710021.pdf)
+* **Humidity/Temperature sensor:** [DHT11] (ftp://imall.iteadstudio.com/Electronic\_Brick/IM120710021/DS_IM120710021.pdf)
 * **Particulate/Dust sensor:** [Shinyei PPD42NS] (http://www.sca-shinyei.com/pdf/PPD42NS.pdf)
 
 ### UV module
