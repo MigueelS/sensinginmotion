@@ -120,12 +120,12 @@ First of all, we advise you to disable the Drone's serial port console communica
 
 (TODO)
 
-## Use instructions
+## Usage instructions
 
 TODO
 
 ## Future work and development
-If you want to continue what our project or do something of your own based on it, here are some guidelines for a future development:
+If you want to continue our project or do something of your own based on it, here are some guidelines for a future development:
 - [ ] Upgrade to a better UAV: Our quadcopter is on the edge of what's capable of lifting, so the system is a bit unstable and its life time is quite low (around 4min ~ 4min 15s), so a more powerful drone would be required in order to get a more stable system.
 - [ ] Upgrade to a better processing unit: Arduino Uno is great for most projects, but in our case we're using almost all its processing capability (the GSM Library is quite heavy).
 - [ ] Improve the Sensing Module by adding more sensors (for example light or gas sensors to detect air pollution).
