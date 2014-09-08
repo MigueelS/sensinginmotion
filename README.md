@@ -32,7 +32,7 @@ The packages containing GPS coordinates have the following syntax:
 Command part  | Meaning
 ------------- | -------------
 "/"           | command starter
-[latitude]    | latitude value expressed in the decimal degree representation (includes “-” in the beginning if it’s negative and “.” to separate the integer part from the decimal part
+[latitude]    | latitude value expressed in the decimal degree representation (includes “-” in the beginning if it’s negative and “.” to separate the integer part from the decimal part)
 [longitude]   | longitude value expressed in the decimal degree representation (in the same format as the latitude)
 "!" | command finalizer
 
