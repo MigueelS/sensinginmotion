@@ -22,7 +22,7 @@ This station can also be plugged on any vehicle (during the course of this proje
 - Parrot's Flight Recorder
 
 ## How does it work?
-The sensors we're using are connected to Arduino and samples are taken from time to time. Those samples are sent to a remote server (Thingspeak was the chosen one) with HTTP Post using a GPRS communication.
+The sensors we're using are connected to Arduino and samples are taken from time to time. Those samples are sent to a remote server (Thingspeak was the chosen one) with HTTP Posts using a GPRS communication.
 
 A serial communication is estabilished between the Arduino and the AR Drone 2.0 in order to receive GPS position information to tag each sample taken. The developed protocol is illustrated [here](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/gps%20protocol.png).
 
