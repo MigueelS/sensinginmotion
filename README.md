@@ -106,7 +106,7 @@ There's also the possibility of choosing the enabled sensors, by commenting the 
 #define DUST_SENSOR_ON // Uncomment to activate Dust sensor
 ```
 
-Information regarding your SIM card's mobile carrier should be included in [ServerConnection.h](https://github.com/MigueelS/sensinginmotion/blob/master/arduino/ServerConnection.h):
+Information regarding your SIM card's mobile carrier, as well as the API key of the Thingspeak Server you're using, should be included in [ServerConnection.h](https://github.com/MigueelS/sensinginmotion/blob/master/arduino/ServerConnection.h):
 ```cpp
 #define PINNUMBER "" // Pin number of your SIM Card
 
