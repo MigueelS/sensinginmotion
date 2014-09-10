@@ -157,3 +157,6 @@ If you want to continue our project or do something of your own based on it, her
   - [ ] Synchronize the sensing process with the movement process (stop to take a reading, and then continue if the reading is successfully sent).
   - [ ] Enable a fault system between the 2 modules: sending regular packets to know if both modules are operational and program some action if one of the modules stops working.
 - [ ] Improve the navigation algorithm, so it could change its path by accessing the readings taken by the Sensing Module.
+
+## Contact us!
+Any questions on the project installation or on its components? Feel free to contact us!
