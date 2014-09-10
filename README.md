@@ -115,6 +115,8 @@ Information regarding your SIM card's mobile carrier should be included in [Serv
 #define GPRS_APN "umts"
 #define GPRS_LOGIN ""
 #define GPRS_PASSWORD ""
+
+#define THINGSPEAK_API_KEY "6AEGT8V0J3ZS77S8"
 ```
 
 #### AR Drone Configuration
