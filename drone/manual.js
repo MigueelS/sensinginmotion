@@ -42,7 +42,7 @@ client.on('navdata', function(navdata)
 // ******************************************************************
 // *************** SERIAL COMMUNICATION *****************************
 // ******************************************************************
-/*
+
 var serialport = require('node-serialport');
 
 var sp = new serialport.SerialPort("/dev/ttyO3", {
@@ -54,7 +54,7 @@ sp.on('data', function(msg) {
 
 	msg = msg.toString();
 	msg = msg.substr(0, msg.length - 1);
-	console.log("Recebi: " + msg);
+	console.log("Received: " + msg);
 
   // External sensing system asks for GPS location
   if (msg.search("\\*GPS!") != -1)
@@ -69,28 +69,23 @@ function processGPS(com)
 {
 	if (com && !processGPS.sending)
 	{
-		console.log("Processei! vai começar")
 		processGPS.sending = true;
 		processGPS.timerID = setInterval(sendGPSPosition, 500);
 	}
 
   else if (!com) // received ACK_GPS!
   {
-  	console.log("Recebi o ACK");
   	processGPS.sending = false;
   	clearInterval(processGPS.timerID);
   }
-
-  else // if received *GPS! and is sending, not do anything
-  	console.log("Recebi GPS e ja tava a mandar");
 }
 
 function sendGPSPosition()
 { 
-	console.log("Mandei " + "/" + GPSPosition.lat + "," + GPSPosition.lon + "!");
+	console.log("Sent " + "/" + GPSPosition.lat + "," + GPSPosition.lon + "!");
 	sp.write("/" + GPSPosition.lat + "," + GPSPosition.lon + "!\n");
 }
-*/
+
 // ******************************************************************
 // ************************* Stardard Input *************************
 // ******************************************************************

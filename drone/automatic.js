@@ -17,7 +17,7 @@ sp.on('data', function(msg) {
 
   msg = msg.toString();
   msg = msg.substr(0, msg.length - 1);
-  console.log("Recebi: " + msg);
+  console.log("Received: " + msg);
 
   // External sensing system asks for GPS location
   if (msg.search("\\*GPS!") != -1)
@@ -32,25 +32,20 @@ function processGPS(com)
 {
   if (com && !processGPS.sending)
   {
-    //console.log("Processei! vai começar")
     processGPS.sending = true;
     processGPS.timerID = setInterval(sendGPSPosition, 500);
   }
 
   else if (!com) // received ACK_GPS!
   {
-    //console.log("Recebi o ACK");
     processGPS.sending = false;
     clearInterval(processGPS.timerID);
   }
-
-  //else // if received *GPS! and is sending, not do anything
-    //console.log("Recebi GPS e ja tava a mandar");
 }
 
 function sendGPSPosition()
 { 
-  console.log("Mandei " + "/" + GPSPosition.lat*Math.pow(10, -7) + "," + GPSPosition.lon*Math.pow(10, -7) + "!");
+  console.log("Sent " + "/" + GPSPosition.lat*Math.pow(10, -7) + "," + GPSPosition.lon*Math.pow(10, -7) + "!");
   console.log("Satelites: " + GPSPosition.nSat);
   sp.write("/" + GPSPosition.lat*Math.pow(10, -7) + "," + GPSPosition.lon*Math.pow(10, -7) + "!\n");
 }
