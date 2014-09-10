@@ -136,9 +136,12 @@ vi init.sh (and comment the like .. with a '#')
 (TODO)
 
 ## Usage instructions
+
+It is possible to either execute the manual control (manually controling the drone with your keyboard) or the automatic control (you need to define a 'mission' on QGroundControl and transfer it to the drone).
+
 ```bash
 cd /data/video
-sh init_prg.sh <program: 'manual.js' or 'automatic.js'>
+sh init_prg.sh <program: manual.js or automatic.js>
 sh init_perm.sh (run this in a different shell)
 ```
 
