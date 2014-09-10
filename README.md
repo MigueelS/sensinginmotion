@@ -135,8 +135,6 @@ cd /etc/...........
 vi init.sh (and comment the like .. with a '#')
 ```
 
-(TODO)
-
 ## Usage instructions
 
 It is possible to either execute the manual control (manually controling the drone with your keyboard) or the automatic control (you need to define a 'mission' on QGroundControl and transfer it to the drone).
