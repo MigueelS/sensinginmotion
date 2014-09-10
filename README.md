@@ -135,7 +135,7 @@ cp -a usb/drone/. .
 mv mavlink node_modules
 mv ar-drone node_modules
 cd /etc/...........
-vi init.sh (and comment the like .. with a '#')
+vi init.sh #(and comment the like .. with a '#')
 ```
 
 ## Usage instructions
@@ -144,8 +144,8 @@ It is possible to either execute the manual control (manually controling the dro
 
 ```bash
 cd /data/video
-sh init_prg.sh <program: manual.js or automatic.js>
-sh init_perm.sh (run this in a different shell)
+sh init_prg.sh manual.js #(you can choose either manual.js or automatic.js)
+sh init_perm.sh #(run this in a different shell)
 ```
 
 ## Future work and development
