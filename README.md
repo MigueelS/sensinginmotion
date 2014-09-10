@@ -7,7 +7,6 @@ Environmental awareness is a big topic these days and more and more DIY projects
 This station can also be plugged on any vehicle (during the course of this project we chose a quadcopter).
 
 ![1](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system1.png)
-![2](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system2.png)
 
 ## Hardware involved
 ### Sensing module
