@@ -42,7 +42,6 @@ client.on('navdata', function(navdata)
 // ******************************************************************
 // *************** SERIAL COMMUNICATION *****************************
 // ******************************************************************
-
 var serialport = require('node-serialport');
 
 var sp = new serialport.SerialPort("/dev/ttyO3", {
@@ -64,6 +63,7 @@ sp.on('data', function(msg) {
   	processGPS(false);
 });
 
+// Processes the income of a GPS command
 // com = True -> received *GPS! // com = False -> received *GPS_ACK!
 function processGPS(com)
 {
@@ -80,6 +80,7 @@ function processGPS(com)
   }
 }
 
+// Sends the GPS Position by serial com
 function sendGPSPosition()
 { 
 	console.log("Sent " + "/" + GPSPosition.lat + "," + GPSPosition.lon + "!");
@@ -145,6 +146,7 @@ stdin.on('data', function(key)
 	}	
 });
 
+// Shows the current state on the screen
 setInterval(function() {
 
 	console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");

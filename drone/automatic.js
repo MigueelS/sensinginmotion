@@ -1,4 +1,3 @@
-
 var GPSPosition = {'lat':411234569, 'lon':-81234568, 'fix':0, 'nSat':0},
 battery_percentage = 100,
 stopped_by_battery = false;
@@ -27,6 +26,7 @@ sp.on('data', function(msg) {
     processGPS(false);
 });
 
+// Processes the income of a GPS command
 // com = True -> received *GPS! // com = False -> received *GPS_ACK!
 function processGPS(com)
 {
@@ -43,6 +43,7 @@ function processGPS(com)
   }
 }
 
+// Sends the GPS Position by serial com
 function sendGPSPosition()
 { 
   console.log("Sent " + "/" + GPSPosition.lat*Math.pow(10, -7) + "," + GPSPosition.lon*Math.pow(10, -7) + "!");
@@ -74,12 +75,15 @@ var MAV_PARAM_TYPE_REAL32 = 9;
 // Component IDs
 var MAV_COMP_ID_ALL = 0;
 
+// Initiates the quadcopter's already saved mission (take-off)
 function launchMission()
 { sendCommand(MAV_CMD_NAV_TAKEOFF, MAV_COMP_ID_ALL, 0, 0, 0, 0, 0, 0, 0); }
 
+// Sends a command to land at current location
 function cancelMission()
 { sendCommand(MAV_CMD_NAV_LAND, MAV_COMP_ID_ALL, 0, 0, 0, 0, 0, 0, 0); }
 
+// Limits the max speed
 function limitSpeed(speed)
 {
     myMAV.createMessage('PARAM_SET', 
@@ -95,6 +99,7 @@ function limitSpeed(speed)
  });
 }
 
+// Sends a MAVlink command (type: COMMAND_LONG) to the drone
 function sendCommand(command, component, param1, param2, param3, param4, param5, param6, param7)
 {
   myMAV.createMessage('COMMAND_LONG', 
