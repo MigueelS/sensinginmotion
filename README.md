@@ -12,8 +12,8 @@ This station can also be plugged on any vehicle (during the course of this proje
 * **Communication module:** Arduino GSM/GPRS Shield
 
 ##### Sensors used
-* **Humidity/Temperature sensor:** [DHT11] (http://bit.ly/1rroTiP)
-* **Particulate/Dust sensor:** [Shinyei PPD42NS] (http://www.sca-shinyei.com/pdf/PPD42NS.pdf)
+* **Humidity/Temperature sensor:** [DHT11](http://bit.ly/1rroTiP)
+* **Particulate/Dust sensor:** [Shinyei PPD42NS](http://www.sca-shinyei.com/pdf/PPD42NS.pdf)
 
 ### UV module
 - Parrot's AR Drone 2.0
@@ -44,6 +44,8 @@ Make sure you follow [this tutorial](https://gist.github.com/maxogden/4152815) t
 A Logic Level Shifter will be needed to avoid ruining the Drone's serial pins. We used [this one](https://www.sparkfun.com/products/12009). Check [mirumod's schematic](http://mirumod.tk/hw/arduino_nano/MIRUMODNANO019GPSG_new.jpg) to know how to do the wiring.
 
 A complete wiring diagram of our system (including the sensors) is available [here](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/System%20schematic.png). Since there was a need for multiple GND and 5V pins, we used a PCB and soldered 2 pin sets which are connected to Arduino.
+
+For powering the whole thing we bifurcated the communication between the quadcopter and the battery to also power the Arduino through its barrel jack.
 
 #### Arduino Configuration
 Note: To avoid conflicts between the Arduino GSM Library and Software Serial, you should comment several code lines of both libraries ([check this](http://purposefulscience.blogspot.pt/2013/06/arduino-gsm-shield-tips.html)).
@@ -116,13 +118,29 @@ Information regarding your SIM card's mobile carrier should be included in [Serv
 ```
 
 #### AR Drone Configuration
-First of all, we advise you to disable the Drone's serial port console communication ], by changing the file "init.sh" (TODO explanation)
+You'll be needing to install the modules [node-mavlink](https://github.com/omcaree/node-mavlink) and [node-ar-drone](https://github.com/felixge/node-ar-drone) in your computer, by using npm (get the latest version of node-ar-drone!).
+
+Copy the folder "drone" in this repository to a usb drive. Search for the node_modules folder in your computer (in mine it was in C:\Program Files (x86)\nodejs), and copy the folders "mavlink" and "ar-drone" to the drone folder in your usb drive. Plug the drive in the female usb port on top of the drone.
+
+Telnet into the drone: ```telnet 192.168.1.1``` and run the following commands:
+
+```bash
+cd /data/video
+cp -r usb/drone .
+mv -r mavlink node_modules
+mv -r ar-drone node_modules
+cd /etc/...........
+vi init.sh (and comment the like .. with a '#')
+```
 
 (TODO)
 
 ## Usage instructions
-
-TODO
+```bash
+cd /data/video
+sh init_prg.sh <program: 'manual.js' or 'automatic.js'>
+sh init_perm.sh (run this in a different shell)
+```
 
 ## Future work and development
 If you want to continue our project or do something of your own based on it, here are some guidelines for a future development:
