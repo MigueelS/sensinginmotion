@@ -128,9 +128,9 @@ Telnet into the drone: ```telnet 192.168.1.1``` and run the following commands:
 
 ```bash
 cd /data/video
-cp -r usb/drone .
-mv -r mavlink node_modules
-mv -r ar-drone node_modules
+cp -a usb/drone/. .
+mv mavlink node_modules
+mv ar-drone node_modules
 cd /etc/...........
 vi init.sh (and comment the like .. with a '#')
 ```
