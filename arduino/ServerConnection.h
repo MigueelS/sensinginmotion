@@ -12,6 +12,8 @@
 #define GPRS_LOGIN ""
 #define GPRS_PASSWORD ""
 
+#define THINGSPEAK_API_KEY "6AEGT8V0J3ZS77S8"
+
 #define SERVER  "api.thingspeak.com"
 #define POST_STR_LENGTH 100
 #define FLOAT_STR_LENGTH 18
@@ -163,7 +165,9 @@ public:
           client.print("POST /update HTTP/1.1\n");
           client.print("Host: api.thingspeak.com\n");
           client.print("Connection: close\n");
-          client.print("X-THINGSPEAKAPIKEY: 6AEGT8V0J3ZS77S8\n");
+          client.print("X-THINGSPEAKAPIKEY: ");
+          client.print(THINGSPEAK_API_KEY);
+          client.print("\n");
           client.print("Content-Type: application/x-www-form-urlencoded\n");
           client.print("Content-Length: ");
           client.print(strlen(http_post_str));
