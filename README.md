@@ -167,4 +167,6 @@ If you want to continue our project or do something of your own based on it, her
 - [ ] Improve the navigation algorithm, so it could change its path by accessing the readings taken by the Sensing Module.
 
 ## Contact us!
-Any questions on the project installation or on its components? Feel free to contact us!
+Any questions on the project installation or on its components? Feel free to contact us:
+- [marcorodrigues](https://github.com/marcorodrigues)
+- [MigueelS](https://github.com/MigueelS)
