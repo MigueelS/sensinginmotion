@@ -6,6 +6,7 @@ Environmental awareness is a big topic these days and more and more DIY projects
 "Sensing In Motion" is a project with the goal of creating an environmental sensing structure/station that reads several parameters, as well as its GPS location, and sends them to a remote server.
 This station can also be plugged on any vehicle (during the course of this project we chose a quadcopter).
 
+
 ![1](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system1.png)
 
 ## Hardware involved
