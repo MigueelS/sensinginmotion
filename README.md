@@ -41,6 +41,15 @@ Command part  | Meaning
 ## Instalation
 
 #### Wiring
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system2.png" alt="System2"/>
+</p>
+
+
+<!--- ![3](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system3.jpg) --->
+<!--- ![4](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system4.jpg) --->
+
 Make sure you follow [this tutorial](https://gist.github.com/maxogden/4152815) to enable the serial communication between the Arduino and the Drone, as well as installing Node.js on the Drone. A most recent version of the AR Drone 2.0 does not have the 10 pin set described in the tutorial, so check the following [schematic](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/6%20pin%20set.png) (check [this](http://forum.parrot.com/ardrone/en/viewtopic.php?id=8148) for more information).
 
 A Logic Level Shifter will be needed to avoid ruining the Drone's serial pins. We used [this one](https://www.sparkfun.com/products/12009). Check [mirumod's schematic](http://mirumod.tk/hw/arduino_nano/MIRUMODNANO019GPSG_new.jpg) to know how to do the wiring.
