@@ -43,7 +43,7 @@ Command part  | Meaning
 #### Wiring
 
 <p align="center">
-  <!--- <img src="https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system2.png" alt="System2"/> --->
+  <img src="https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system2.png" alt="System2"/>
   <img src="https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system3.png" alt="System3"/>
 </p>
 
