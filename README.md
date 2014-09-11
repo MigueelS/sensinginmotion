@@ -141,8 +141,8 @@ cd /data/video
 cp -a usb/drone/. .
 mv mavlink node_modules
 mv ar-drone node_modules
-cd /etc/...........
-vi init.sh #(and comment the like .. with a '#')
+cd /etc
+vi inittab #(comment the line "ttyO3::askfirst:/bin/sh -l" with a '#')
 ```
 
 ## Usage instructions
