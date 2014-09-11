@@ -147,7 +147,7 @@ vi inittab #(comment the line "ttyO3::askfirst:/bin/sh -l" with a '#')
 
 ## Usage instructions
 
-It is possible to either execute the manual control (manually controling the drone with your keyboard) or the automatic control (you need to define a 'mission' on QGroundControl and transfer it to the drone).
+It is possible to either execute the manual control (manually controling the drone with your keyboard, check the controls [here](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/manual%20controls.png)) or the automatic control (you need to define a 'mission' on QGroundControl and transfer it to the drone).
 
 ```bash
 cd /data/video
