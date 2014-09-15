@@ -8,6 +8,7 @@ This station can also be plugged on any vehicle (during the course of this proje
 
 
 ![1](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system1.png)
+![4](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system4.png)
 
 ## Hardware involved
 ### Sensing module
