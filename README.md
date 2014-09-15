@@ -8,7 +8,7 @@ This station can also be plugged on any vehicle (during the course of this proje
 
 
 ![1](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system1.png)
-![4](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system4.png)
+![4](https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system4.jpg)
 
 ## Hardware involved
 ### Sensing module
@@ -45,7 +45,7 @@ Command part  | Meaning
 #### Wiring
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system2.png" alt="System2"/>
+  <img src="https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system2.jpg" alt="System2"/>
   <img src="https://raw.githubusercontent.com/MigueelS/sensinginmotion/master/images/system3.png" alt="System3"/>
 </p>
 
